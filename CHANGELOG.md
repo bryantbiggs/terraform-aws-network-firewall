@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.1.0](https://github.com/terraform-aws-modules/terraform-aws-network-firewall/compare/v2.0.2...v2.1.0) (2026-01-08)
+
+### Features
+
+* Add provider meta user-agent ([#21](https://github.com/terraform-aws-modules/terraform-aws-network-firewall/issues/21)) ([f6329b1](https://github.com/terraform-aws-modules/terraform-aws-network-firewall/commit/f6329b1261aedd360be66df2383770f910b4b33a))
+
 ## [2.0.2](https://github.com/terraform-aws-modules/terraform-aws-network-firewall/compare/v2.0.1...v2.0.2) (2025-10-21)
 
 ### Bug Fixes
