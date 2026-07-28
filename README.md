@@ -122,6 +122,7 @@ No resources.
 | <a name="input_create_policy_resource_policy"></a> [create\_policy\_resource\_policy](#input\_create\_policy\_resource\_policy) | Controls if a resource policy should be created | `bool` | `null` | no |
 | <a name="input_delete_protection"></a> [delete\_protection](#input\_delete\_protection) | A boolean flag indicating whether it is possible to delete the firewall. Defaults to `true` | `bool` | `true` | no |
 | <a name="input_description"></a> [description](#input\_description) | A friendly description of the firewall | `string` | `""` | no |
+| <a name="input_enable_monitoring_dashboard"></a> [enable\_monitoring\_dashboard](#input\_enable\_monitoring\_dashboard) | Whether to enable monitoring dashboard for the logging configuration | `bool` | `null` | no |
 | <a name="input_enabled_analysis_types"></a> [enabled\_analysis\_types](#input\_enabled\_analysis\_types) | Set of types for which to collect analysis metrics. Valid values: `TLS_SNI`, `HTTP_HOST`. Defaults to `[]` | `list(string)` | `null` | no |
 | <a name="input_encryption_configuration"></a> [encryption\_configuration](#input\_encryption\_configuration) | KMS encryption configuration settings | <pre>object({<br/>    key_id = optional(string)<br/>    type   = string<br/>  })</pre> | `null` | no |
 | <a name="input_firewall_policy_arn"></a> [firewall\_policy\_arn](#input\_firewall\_policy\_arn) | The ARN of the Firewall Policy to use | `string` | `""` | no |

@@ -61,6 +61,8 @@ resource "aws_networkfirewall_logging_configuration" "this" {
 
   firewall_arn = aws_networkfirewall_firewall.this[0].arn
 
+  enable_monitoring_dashboard = var.enable_monitoring_dashboard
+
   logging_configuration {
     # At least one config, at most, only two blocks can be specified; one for `FLOW` logs and one for `ALERT` logs.
     dynamic "log_destination_config" {

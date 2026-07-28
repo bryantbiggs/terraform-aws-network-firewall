@@ -9,6 +9,7 @@ module "wrapper" {
   create_logging_configuration             = try(each.value.create_logging_configuration, var.defaults.create_logging_configuration, false)
   delete_protection                        = try(each.value.delete_protection, var.defaults.delete_protection, true)
   description                              = try(each.value.description, var.defaults.description, null)
+  enable_monitoring_dashboard              = try(each.value.enable_monitoring_dashboard, var.defaults.enable_monitoring_dashboard, null)
   enabled_analysis_types                   = try(each.value.enabled_analysis_types, var.defaults.enabled_analysis_types, [])
   encryption_configuration                 = try(each.value.encryption_configuration, var.defaults.encryption_configuration, null)
   firewall_policy_arn                      = try(each.value.firewall_policy_arn, var.defaults.firewall_policy_arn, "")

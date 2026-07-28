@@ -126,6 +126,12 @@ variable "logging_configuration_destination_config" {
   default = null
 }
 
+variable "enable_monitoring_dashboard" {
+  description = "Whether to enable monitoring dashboard for the logging configuration"
+  type        = bool
+  default     = null
+}
+
 ################################################################################
 # Firewall Policy
 ################################################################################

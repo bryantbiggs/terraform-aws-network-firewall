@@ -26,6 +26,7 @@ module "firewall" {
   # Logging
   create_logging_configuration             = var.create_logging_configuration
   logging_configuration_destination_config = var.logging_configuration_destination_config
+  enable_monitoring_dashboard              = var.enable_monitoring_dashboard
 
   tags = var.tags
 }
