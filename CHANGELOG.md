@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.2.0](https://github.com/terraform-aws-modules/terraform-aws-network-firewall/compare/v2.1.0...v2.2.0) (2026-07-28)
+
+### Features
+
+* Add `tls_inspection_configuration_arn` and `enable_tls_session_holding` support ([#23](https://github.com/terraform-aws-modules/terraform-aws-network-firewall/issues/23)) ([fdf5d79](https://github.com/terraform-aws-modules/terraform-aws-network-firewall/commit/fdf5d79bbdcd3c991f8c34b84546fba913f24bf3))
+
 ## [2.1.0](https://github.com/terraform-aws-modules/terraform-aws-network-firewall/compare/v2.0.2...v2.1.0) (2026-01-08)
 
 ### Features
