@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.3.0](https://github.com/terraform-aws-modules/terraform-aws-network-firewall/compare/v2.2.0...v2.3.0) (2026-07-28)
+
+### Features
+
+* Add `enable_monitoring_dashboard` parameter to logging configuration ([#22](https://github.com/terraform-aws-modules/terraform-aws-network-firewall/issues/22)) ([a2748b7](https://github.com/terraform-aws-modules/terraform-aws-network-firewall/commit/a2748b76b49fdeed0462dae7498cd1768d4a72c0))
+
 ## [2.2.0](https://github.com/terraform-aws-modules/terraform-aws-network-firewall/compare/v2.1.0...v2.2.0) (2026-07-28)
 
 ### Features
