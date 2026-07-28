@@ -21,20 +21,20 @@ Note that this example may create resources which will incur monetary charges on
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.7 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 6.28 |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="provider_aws"></a> [aws](#provider\_aws) | >= 6.28 |
 
 ## Modules
 
 | Name | Source | Version |
-|------|--------|---------|
+| ---- | ------ | ------- |
 | <a name="module_network_firewall"></a> [network\_firewall](#module\_network\_firewall) | ../.. | n/a |
 | <a name="module_network_firewall_disabled"></a> [network\_firewall\_disabled](#module\_network\_firewall\_disabled) | ../.. | n/a |
 | <a name="module_network_firewall_rule_group_stateful"></a> [network\_firewall\_rule\_group\_stateful](#module\_network\_firewall\_rule\_group\_stateful) | ../../modules/rule-group | n/a |
@@ -44,7 +44,7 @@ Note that this example may create resources which will incur monetary charges on
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [aws_cloudwatch_log_group.logs](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_group) | resource |
 | [aws_s3_bucket.network_firewall_logs](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket) | resource |
 | [aws_s3_bucket_policy.network_firewall_logs](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_policy) | resource |
@@ -58,7 +58,7 @@ No inputs.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_firewall_arn"></a> [firewall\_arn](#output\_firewall\_arn) | The Amazon Resource Name (ARN) that identifies the firewall |
 | <a name="output_firewall_id"></a> [firewall\_id](#output\_firewall\_id) | The Amazon Resource Name (ARN) that identifies the firewall |
 | <a name="output_firewall_logging_configuration_id"></a> [firewall\_logging\_configuration\_id](#output\_firewall\_logging\_configuration\_id) | The Amazon Resource Name (ARN) of the associated firewall |

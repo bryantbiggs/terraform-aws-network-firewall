@@ -92,7 +92,7 @@ Examples codified under the [`examples`](https://github.com/terraform-aws-module
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.7 |
 
 ## Providers
@@ -102,7 +102,7 @@ No providers.
 ## Modules
 
 | Name | Source | Version |
-|------|--------|---------|
+| ---- | ------ | ------- |
 | <a name="module_firewall"></a> [firewall](#module\_firewall) | ./modules/firewall | n/a |
 | <a name="module_policy"></a> [policy](#module\_policy) | ./modules/policy | n/a |
 
@@ -113,7 +113,7 @@ No resources.
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_availability_zone_change_protection"></a> [availability\_zone\_change\_protection](#input\_availability\_zone\_change\_protection) | A setting indicating whether the firewall is protected against changes to its Availability Zone configuration. When set to true, you must first disable this protection before adding or removing Availability Zones | `bool` | `null` | no |
 | <a name="input_availability_zone_mapping"></a> [availability\_zone\_mapping](#input\_availability\_zone\_mapping) | Required when creating a transit gateway-attached firewall. Set of configuration blocks describing the avaiability availability where you want to create firewall endpoints for a transit gateway-attached firewall | <pre>list(object({<br/>    availability_zone_id = string<br/>  }))</pre> | `null` | no |
 | <a name="input_create"></a> [create](#input\_create) | Controls if resources should be created | `bool` | `true` | no |
@@ -130,6 +130,7 @@ No resources.
 | <a name="input_name"></a> [name](#input\_name) | A friendly name of the firewall | `string` | `""` | no |
 | <a name="input_policy_attach_resource_policy"></a> [policy\_attach\_resource\_policy](#input\_policy\_attach\_resource\_policy) | Controls if a resource policy should be attached to the firewall policy | `bool` | `null` | no |
 | <a name="input_policy_description"></a> [policy\_description](#input\_policy\_description) | A friendly description of the firewall policy | `string` | `null` | no |
+| <a name="input_policy_enable_tls_session_holding"></a> [policy\_enable\_tls\_session\_holding](#input\_policy\_enable\_tls\_session\_holding) | Whether to allow the firewall to hold TLS sessions to allow TLS traffic processing before downstream connection establishment. When set to `true`, adds latency — enable only if TLS.SNI rule groups are active in the policy | `bool` | `null` | no |
 | <a name="input_policy_encryption_configuration"></a> [policy\_encryption\_configuration](#input\_policy\_encryption\_configuration) | KMS encryption configuration settings | <pre>object({<br/>    key_id = optional(string)<br/>    type   = string<br/>  })</pre> | `null` | no |
 | <a name="input_policy_name"></a> [policy\_name](#input\_policy\_name) | A friendly name of the firewall policy | `string` | `""` | no |
 | <a name="input_policy_ram_resource_associations"></a> [policy\_ram\_resource\_associations](#input\_policy\_ram\_resource\_associations) | A map of RAM resource associations for the created firewall policy | `map(string)` | `null` | no |
@@ -144,6 +145,7 @@ No resources.
 | <a name="input_policy_stateless_fragment_default_actions"></a> [policy\_stateless\_fragment\_default\_actions](#input\_policy\_stateless\_fragment\_default\_actions) | Set of actions to take on a fragmented packet if it does not match any of the stateless rules in the policy. You must specify one of the standard actions including: `aws:drop`, `aws:pass`, or `aws:forward_to_sfe` | `list(string)` | `null` | no |
 | <a name="input_policy_stateless_rule_group_reference"></a> [policy\_stateless\_rule\_group\_reference](#input\_policy\_stateless\_rule\_group\_reference) | Set of configuration blocks containing references to the stateless rule groups that are used in the policy. See [Stateless Rule Group Reference](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/networkfirewall_firewall_policy#stateless-rule-group-reference) for details | <pre>map(object({<br/>    priority     = number<br/>    resource_arn = string<br/>  }))</pre> | `null` | no |
 | <a name="input_policy_tags"></a> [policy\_tags](#input\_policy\_tags) | A map of tags to add to all resources | `map(string)` | `{}` | no |
+| <a name="input_policy_tls_inspection_configuration_arn"></a> [policy\_tls\_inspection\_configuration\_arn](#input\_policy\_tls\_inspection\_configuration\_arn) | The ARN of the TLS inspection configuration to associate with the firewall policy | `string` | `null` | no |
 | <a name="input_policy_variables"></a> [policy\_variables](#input\_policy\_variables) | Contains variables that you can use to override default Suricata settings in your firewall policy | <pre>object({<br/>    rule_variables = list(object({<br/>      ip_set = optional(object({<br/>        definition = list(string)<br/>      }))<br/>      key = string<br/>    }))<br/>  })</pre> | `null` | no |
 | <a name="input_region"></a> [region](#input\_region) | Region where the resource(s) will be managed. Defaults to the Region set in the provider configuration | `string` | `null` | no |
 | <a name="input_subnet_change_protection"></a> [subnet\_change\_protection](#input\_subnet\_change\_protection) | A boolean flag indicating whether it is possible to change the associated subnet(s). Defaults to `true` | `bool` | `true` | no |
@@ -155,7 +157,7 @@ No resources.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_arn"></a> [arn](#output\_arn) | The Amazon Resource Name (ARN) that identifies the firewall |
 | <a name="output_id"></a> [id](#output\_id) | The Amazon Resource Name (ARN) that identifies the firewall |
 | <a name="output_logging_configuration_id"></a> [logging\_configuration\_id](#output\_logging\_configuration\_id) | The Amazon Resource Name (ARN) of the associated firewall |

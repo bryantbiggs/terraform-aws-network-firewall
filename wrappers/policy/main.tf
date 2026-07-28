@@ -7,6 +7,7 @@ module "wrapper" {
   create                             = try(each.value.create, var.defaults.create, true)
   create_resource_policy             = try(each.value.create_resource_policy, var.defaults.create_resource_policy, false)
   description                        = try(each.value.description, var.defaults.description, null)
+  enable_tls_session_holding         = try(each.value.enable_tls_session_holding, var.defaults.enable_tls_session_holding, null)
   encryption_configuration           = try(each.value.encryption_configuration, var.defaults.encryption_configuration, null)
   name                               = try(each.value.name, var.defaults.name, "")
   policy_variables                   = try(each.value.policy_variables, var.defaults.policy_variables, null)
@@ -23,4 +24,5 @@ module "wrapper" {
   stateless_fragment_default_actions = try(each.value.stateless_fragment_default_actions, var.defaults.stateless_fragment_default_actions, ["aws:pass"])
   stateless_rule_group_reference     = try(each.value.stateless_rule_group_reference, var.defaults.stateless_rule_group_reference, null)
   tags                               = try(each.value.tags, var.defaults.tags, {})
+  tls_inspection_configuration_arn   = try(each.value.tls_inspection_configuration_arn, var.defaults.tls_inspection_configuration_arn, null)
 }

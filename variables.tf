@@ -235,6 +235,18 @@ variable "policy_name" {
   default     = ""
 }
 
+variable "policy_tls_inspection_configuration_arn" {
+  description = "The ARN of the TLS inspection configuration to associate with the firewall policy"
+  type        = string
+  default     = null
+}
+
+variable "policy_enable_tls_session_holding" {
+  description = "Whether to allow the firewall to hold TLS sessions to allow TLS traffic processing before downstream connection establishment. When set to `true`, adds latency — enable only if TLS.SNI rule groups are active in the policy"
+  type        = bool
+  default     = null
+}
+
 variable "policy_tags" {
   description = "A map of tags to add to all resources"
   type        = map(string)

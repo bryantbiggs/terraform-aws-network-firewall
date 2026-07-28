@@ -53,6 +53,10 @@ module "policy" {
   stateless_rule_group_reference     = var.policy_stateless_rule_group_reference
   name                               = try(coalesce(var.policy_name, var.name), "")
 
+  # TLS Inspection
+  tls_inspection_configuration_arn = var.policy_tls_inspection_configuration_arn
+  enable_tls_session_holding       = var.policy_enable_tls_session_holding
+
   # Resource policy
   create_resource_policy     = var.create_policy_resource_policy
   resource_policy_actions    = var.policy_resource_policy_actions

@@ -40,14 +40,14 @@ module "network_firewall_policy" {
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.7 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 6.28 |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="provider_aws"></a> [aws](#provider\_aws) | >= 6.28 |
 
 ## Modules
@@ -57,7 +57,7 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [aws_networkfirewall_firewall_policy.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/networkfirewall_firewall_policy) | resource |
 | [aws_networkfirewall_resource_policy.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/networkfirewall_resource_policy) | resource |
 | [aws_ram_resource_association.firewall_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ram_resource_association) | resource |
@@ -66,11 +66,12 @@ No modules.
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_attach_resource_policy"></a> [attach\_resource\_policy](#input\_attach\_resource\_policy) | Controls if a resource policy should be attached to the firewall policy | `bool` | `false` | no |
 | <a name="input_create"></a> [create](#input\_create) | Controls if resources should be created | `bool` | `true` | no |
 | <a name="input_create_resource_policy"></a> [create\_resource\_policy](#input\_create\_resource\_policy) | Controls if a resource policy should be created | `bool` | `false` | no |
 | <a name="input_description"></a> [description](#input\_description) | A friendly description of the firewall policy | `string` | `null` | no |
+| <a name="input_enable_tls_session_holding"></a> [enable\_tls\_session\_holding](#input\_enable\_tls\_session\_holding) | Whether to allow the firewall to hold TLS sessions to allow TLS traffic processing before downstream connection establishment. When set to `true`, adds latency — enable only if TLS.SNI rule groups are active in the policy | `bool` | `null` | no |
 | <a name="input_encryption_configuration"></a> [encryption\_configuration](#input\_encryption\_configuration) | KMS encryption configuration settings | <pre>object({<br/>    key_id = optional(string)<br/>    type   = string<br/>  })</pre> | `null` | no |
 | <a name="input_name"></a> [name](#input\_name) | A friendly name of the firewall policy | `string` | `""` | no |
 | <a name="input_policy_variables"></a> [policy\_variables](#input\_policy\_variables) | Contains variables that you can use to override default Suricata settings in your firewall policy | <pre>object({<br/>    rule_variables = list(object({<br/>      ip_set = optional(object({<br/>        definition = list(string)<br/>      }))<br/>      key = string<br/>    }))<br/>  })</pre> | `null` | no |
@@ -87,11 +88,12 @@ No modules.
 | <a name="input_stateless_fragment_default_actions"></a> [stateless\_fragment\_default\_actions](#input\_stateless\_fragment\_default\_actions) | Set of actions to take on a fragmented packet if it does not match any of the stateless rules in the policy. You must specify one of the standard actions including: `aws:drop`, `aws:pass`, or `aws:forward_to_sfe` | `list(string)` | <pre>[<br/>  "aws:pass"<br/>]</pre> | no |
 | <a name="input_stateless_rule_group_reference"></a> [stateless\_rule\_group\_reference](#input\_stateless\_rule\_group\_reference) | Set of configuration blocks containing references to the stateless rule groups that are used in the policy. See [Stateless Rule Group Reference](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/networkfirewall_firewall_policy#stateless-rule-group-reference) for details | <pre>map(object({<br/>    priority     = number<br/>    resource_arn = string<br/>  }))</pre> | `null` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | A map of tags to add to all resources | `map(string)` | `{}` | no |
+| <a name="input_tls_inspection_configuration_arn"></a> [tls\_inspection\_configuration\_arn](#input\_tls\_inspection\_configuration\_arn) | The ARN of the TLS inspection configuration to associate with the firewall policy | `string` | `null` | no |
 
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_arn"></a> [arn](#output\_arn) | The Amazon Resource Name (ARN) that identifies the firewall policy |
 | <a name="output_id"></a> [id](#output\_id) | The Amazon Resource Name (ARN) that identifies the firewall policy |
 | <a name="output_resource_policy_id"></a> [resource\_policy\_id](#output\_resource\_policy\_id) | The Amazon Resource Name (ARN) of the firewall policy associated with the resource policy |

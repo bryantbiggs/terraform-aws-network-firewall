@@ -120,6 +120,9 @@ resource "aws_networkfirewall_firewall_policy" "this" {
         resource_arn = stateless_rule_group_reference.value.resource_arn
       }
     }
+
+    tls_inspection_configuration_arn = var.tls_inspection_configuration_arn
+    enable_tls_session_holding       = var.enable_tls_session_holding
   }
 
   name = var.name
